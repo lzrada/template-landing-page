@@ -1,0 +1,39 @@
+"use client";
+
+import type { JSX } from "react";
+import { useTheme } from "../context/ThemeContext";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
+
+const Navbar = (): JSX.Element => {
+  const { theme, toogleTheme } = useTheme();
+
+  return (
+    <>
+      <div className={`flex items-center justify-between p-2 w-full h-14 ${theme === "light" ? "bg-white/30 backdrop-blur-md text-[#4D4D4D]" : "bg-black/30 backdrop-blur-md text-white"} fixed top-0 shadow-md z-50`}>
+        <div className=" ml-16 flex items-center justify-center">
+          <img src="/images/personal.png" className="w-10" alt="Logo" />
+          <p className="mb-1 font-bold">LAZZGHIF</p>
+        </div>
+
+        <div className="flex items-center justify-center mr-16">
+          <ul className="flex items-center justify-center gap-10">
+            <li className="cursor-pointer hover:underline text-md">Home</li>
+            <li className="cursor-pointer hover:underline text-md">Features</li>
+            <li onClick={() => document.getElementById("our-partners")?.scrollIntoView({ behavior: "smooth" })} className="cursor-pointer hover:underline text-md">
+              Partner
+            </li>
+            <li className="cursor-pointer hover:underline text-md">Blog</li>
+            <li className="cursor-pointer hover:underline text-md">Pricing</li>
+          </ul>
+          <button onClick={toogleTheme} className="mt-2 mx-4 px-4 py-2 transition-all duration-300 ease-in-out flex items-center justify-center text-[#4D4D4D] rounded">
+            <div className="hidden">{theme}</div>
+            {theme === "light" ? <FontAwesomeIcon icon={faMoon} className="mr-2 text-3xl mb-2" /> : <FontAwesomeIcon icon={faSun} className="mr-2 text-3xl mb-2" />}
+          </button>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Navbar;
