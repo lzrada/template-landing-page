@@ -8,6 +8,7 @@ import SecondPage from "./pages/SecondPage.tsx";
 import Tabs from "./pages/Tabs.tsx";
 import NotFound from "./Not-found.tsx";
 import Layout from "./components/Layout.tsx";
+
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <ThemeProvider>

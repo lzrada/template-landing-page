@@ -11,12 +11,17 @@ const Navbar = (): JSX.Element => {
   return (
     <>
       <div className={`flex items-center justify-between p-2 w-full h-14 ${theme === "light" ? "bg-white/30 backdrop-blur-md text-[#4D4D4D]" : "bg-black/30 backdrop-blur-md text-white"} fixed top-0 shadow-md z-50`}>
-        <div className=" ml-16 flex items-center justify-center">
+        <div className="cursor-pointer  lg:ml-16 flex items-center justify-center">
           <img src="/images/personal.png" className="w-10" alt="Logo" />
           <p className="mb-1 font-bold">LAZZGHIF</p>
         </div>
+        <div className="gap-1 mb-2 md:hidden lg:hidden cursor-pointer mr-3 flex flex-col">
+          <div className="w-6 h-1 bg-black"></div>
+          <div className="w-6 h-1 bg-black"></div>
+          <div className="w-6 h-1 bg-black"></div>
+        </div>
 
-        <div className="flex items-center justify-center mr-16">
+        <div className="items-center hidden md:flex lg:flex justify-center mr-16">
           <ul className="flex items-center justify-center gap-10">
             <li className="cursor-pointer hover:underline text-md">Home</li>
             <li className="cursor-pointer hover:underline text-md">Features</li>
@@ -28,7 +33,7 @@ const Navbar = (): JSX.Element => {
           </ul>
           <button onClick={toogleTheme} className="mt-2 mx-4 px-4 py-2 transition-all duration-300 ease-in-out flex items-center justify-center text-[#4D4D4D] rounded">
             <div className="hidden">{theme}</div>
-            {theme === "light" ? <FontAwesomeIcon icon={faMoon} className="mr-2 text-3xl mb-2" /> : <FontAwesomeIcon icon={faSun} className="mr-2 text-3xl mb-2" />}
+            {theme === "light" ? <FontAwesomeIcon icon={faMoon} className="mr-2 text-3xl mb-2 opacity-80 hover:opacity-90" /> : <FontAwesomeIcon icon={faSun} className="mr-2 text-3xl mb-2" />}
           </button>
         </div>
       </div>
