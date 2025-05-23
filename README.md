@@ -1,54 +1,76 @@
-# React + TypeScript + Vite
+```markdown
+# ⚡ LAZZGHIF Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern and responsive **Landing Page** built with [Vite](https://vitejs.dev/), [React](https://react.dev/), and [Tailwind CSS](https://tailwindcss.com/).  
+This project uses [pnpm](https://pnpm.io/) for fast and efficient package management.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## Expanding the ESLint configuration
+- 🧼 Clean and minimal UI
+- 🌙 Light/Dark mode toggle
+- 🧩 Modular React components
+- ⚡ Super fast bundling with Vite
+- 🎨 Styled with Tailwind CSS
+- 📦 Managed with pnpm
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+
+````
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+Install [pnpm](https://pnpm.io/):
+
+```bash
+npm install -g pnpm
+````
+
+### Install dependencies
+
+```bash
+pnpm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Run the development server
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+pnpm dev
 ```
+
+Then open: [http://localhost:5173](http://localhost:5173)
+
+---
+
+## 🏗️ Build for Production
+
+```bash
+pnpm build
+```
+
+### Preview Production Build
+
+```bash
+pnpm preview
+```
+
+---
+
+## 🙌 Credits
+
+* [Vite](https://vitejs.dev/)
+* [React](https://reactjs.org/)
+* [Tailwind CSS](https://tailwindcss.com/)
+* [pnpm](https://pnpm.io/)
+
+> Built with ❤️ by LAZZGHIF
+
+
+
+
