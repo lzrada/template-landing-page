@@ -6,6 +6,9 @@ import { SectionOne } from "./components/ui/SectionOne";
 import { MarqueeSection } from "./components/ui/MarqueeSection";
 import CardSection from "./components/ui/CardSection";
 import LastSection from "./components/ui/LastSection";
+import { FaInstagram, FaLinkedin, FaTwitter, FaYoutube } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import { TiLocationArrow } from "react-icons/ti";
 
 const App = () => {
   const { theme } = useTheme();
@@ -126,7 +129,7 @@ const App = () => {
             <div className="grid grid-cols-3 gap-8 px-12 mt-9 py-4">
               <div className="relative w-72 h-72 rounded shadow-lg">
                 <img src="/images/grid1.jpeg" className="w-full h-full object-cover" alt="" />
-                <div className="absolute overflow-visible z-50 min-h-32 text-center -bottom-16  left-4 right-4 bg-white rounded-md shadow-md p-4 flex flex-col gap-2">
+                <div className="absolute overflow-visible z-20 min-h-32 text-center -bottom-16  left-4 right-4 bg-white rounded-md shadow-md p-4 flex flex-col gap-2">
                   <p className=" ml-1 font-semibold text-sm w-52">Creating Streamlined Safeguarding Processes with OneRen</p>
                   <p className="text-[#4CAF4F] font-medium text-sm cursor-pointer">Readmore →</p>
                 </div>
@@ -134,7 +137,7 @@ const App = () => {
 
               <div className="relative w-72 h-72 rounded shadow-lg">
                 <img src="/images/grid2.jpeg" className="w-full h-full object-cover" alt="" />
-                <div className="absolute overflow-visible z-50 min-h-32 text-center -bottom-16  left-4 right-4 bg-white rounded-md shadow-md p-4 flex flex-col gap-2">
+                <div className="absolute overflow-visible z-20 min-h-32 text-center -bottom-16  left-4 right-4 bg-white rounded-md shadow-md p-4 flex flex-col gap-2">
                   <p className="font-semibold text-sm w-56">What are your safeguarding responsibilities and how can you manage them?</p>
                   <p className="text-[#4CAF4F] font-medium text-sm cursor-pointer">Readmore →</p>
                 </div>
@@ -142,10 +145,95 @@ const App = () => {
 
               <div className="relative w-72 h-72 rounded shadow-lg">
                 <img src="/images/grid3.jpeg" className="w-full h-full object-cover" alt="" />
-                <div className="absolute overflow-visible z-50 min-h-32 text-center -bottom-16  left-4 right-4 bg-white rounded-md shadow-md p-4 flex flex-col gap-2">
-                  <p className="font-semibold text-sm w-52">Revamping the Membership Model with Triathlon Australia</p>
-                  <p className="text-[#4CAF4F] font-medium text-sm cursor-pointer">Readmore →</p>
+                <div className="absolute overflow-visible z-20 min-h-32 text-center -bottom-16  left-4 right-4 bg-white rounded-md shadow-md p-4 flex flex-col gap-2">
+                  <div className="flex flex-col items-center justify-center gap-5">
+                    <p className="font-semibold text-sm w-[11.5rem]">Revamping the Membership Model with Triathlon Australia</p>
+                    <p className="text-[#4CAF4F] font-medium text-sm cursor-pointer">Readmore →</p>
+                  </div>
                 </div>
+              </div>
+            </div>
+          </div>
+          <div className="h-52 pb-6 w-full bg-gray-100 flex flex-col items-center justify-center">
+            <h2 className="my-3 font-semibold text-4xl text-center w-[22rem]">Pellentesque suscipit fringilla libero eu.</h2>
+            <div className="w-36 h-12 cursor-pointer mt-4 text-white rounded bg-[#4CAF4F] flex justify-center items-center">
+              <p>Get a Demo →</p>
+            </div>
+          </div>
+
+          <div className="flex gap-2 p-16 h-[20rem]  text-white bg-[#0B0D17] justify-around items-center">
+            <div className="flex flex-col justify-center my-5">
+              <div className="flex justify-center items-center">
+                <img src="/images/black_logo.png" className="w-24 h-24" alt="" />
+                <p className="text-xl font-semibold">LAZZGHIF</p>
+              </div>
+
+              <div className="ml-10 ">
+                <p className="ml-2">Copyright © 2025 Lazzghif.</p>
+                <p className="ml-2">All rights reserved</p>
+                <div className="flex gap-4 items-center mt-8">
+                  <div className="rounded-full w-10 bg-gray-800 hover:bg-gray-700 cursor-pointer  h-10 flex justify-center items-center">
+                    <FaInstagram className="opacity-100 z-20" />
+                  </div>
+                  <div className="rounded-full w-10 bg-gray-800 hover:bg-gray-700 cursor-pointer  h-10 flex justify-center items-center">
+                    <FaTwitter className="opacity-100 z-20" />
+                  </div>
+                  <div className="rounded-full w-10 bg-gray-800 hover:bg-gray-700 cursor-pointer  h-10 flex justify-center items-center">
+                    <FaYoutube className="opacity-100 z-20" />
+                  </div>
+                  <div className="rounded-full w-10 bg-gray-800 hover:bg-gray-700 cursor-pointer h-10 flex justify-center items-center">
+                    <FaLinkedin className="opacity-100 z-20" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="w-36 h-36 flex flex-col ml-10">
+              <div>
+                <p className="font-semibold text-lg mb-6">Company</p>
+                <div className="font-thin text-sm gap-2  flex flex-col">
+                  <Link to={"#"} className="opacity-90 hover:opacity-100">
+                    About us{" "}
+                  </Link>
+                  <Link to={"#"} className="opacity-90 hover:opacity-100">
+                    Blog
+                  </Link>
+                  <Link to={"#"} className="opacity-90 hover:opacity-100">
+                    Contact us
+                  </Link>
+                  <Link to={"#"} className="opacity-90 hover:opacity-100">
+                    Pricing
+                  </Link>
+                  <Link to={"#"} className="opacity-90 hover:opacity-100">
+                    Testimonial
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <div className="w-36 h-36 ">
+              <p className="font-semibold text-lg">Support</p>
+              <div className="font-thin text-sm flex flex-col gap-2 mt-6">
+                <Link to={"#"} className="opacity-90 hover:opacity-100">
+                  Help center
+                </Link>
+                <Link to={"#"} className="opacity-90 hover:opacity-100">
+                  Terms of service
+                </Link>
+                <Link to={"#"} className="opacity-90 hover:opacity-100">
+                  Legal
+                </Link>
+                <Link to={"#"} className="opacity-90 hover:opacity-100">
+                  Privacy policy
+                </Link>
+                <Link to={"#"} className="opacity-90 hover:opacity-100">
+                  Status
+                </Link>
+              </div>
+            </div>
+            <div className="w-36 h-36 mr-24 ">
+              <h2 className="font-semibold text-lg">Stay up to Date</h2>
+              <div className="w-56 h-10 bg-gray-800 rounded mt-6 flex justify-between p-2 items-center">
+                <input type="text" className="bg-transparent outline-none" placeholder="Your email address" />
+                <TiLocationArrow className="w-6 h-6 opacity-90 cursor-pointer" />
               </div>
             </div>
           </div>
