@@ -5,37 +5,45 @@ import { HiOutlineUserGroup } from "react-icons/hi2";
 
 const CardSection = (): JSX.Element => {
   return (
-    <>
-      <div className="flex flex-col font-semibold text-2xl font-sans justify-center items-center">
-        <p>Manage your entire community </p>
-        <p>in a single system</p>
-        <p className="text-sm mt-2 font-thin">Who is Nextcent suitable for?</p>
+    <div className="w-full py-8 lg:py-16 px-4 lg:px-8">
+      {/* Header Section */}
+      <div className="text-center mb-8 lg:mb-10">
+        <h2 className="font-semibold text-2xl sm:text-3xl lg:text-4xl mb-2 leading-tight">Manage your entire community</h2>
+        <h3 className="font-semibold text-2xl sm:text-3xl lg:text-4xl mb-4 leading-tight">in a single system</h3>
+        <p className="font-thin text-sm sm:text-base text-gray-600 max-w-md mx-auto">Who is Nextcent suitable for?</p>
       </div>
 
-      <div className="grid grid-cols-3 p-10 ml-24 m-4 gap-4">
-        <div className="text-center shadow-md rounded flex flex-col items-center p-2 justify-center w-60 h-60">
-          <div className="relative w-12 h-12 rounded-br-2xl rounded-tl-2xl rounded bg-[#E8F5E9]">
-            <HiOutlineUserGroup className="w-10 h-10 absolute -left-4 -top-1" />
+      {/* Cards Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
+        {/* Membership Organisations Card */}
+        <div className="flex flex-col items-center text-center p-4 lg:p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+          <div className="w-16 h-16 sm:w-20 sm:h-20 bg-[#4CAF4F]/10 rounded-lg flex items-center justify-center mb-4">
+            <HiOutlineUserGroup className="w-8 h-8 sm:w-10 sm:h-10 text-[#4CAF4F]" />
           </div>
-          <p className="font-semibold m-2">Membership Organisations</p>
-          <p>Our membership management software provides full automation of membership renewals and payments</p>
+          <h4 className="font-semibold text-lg sm:text-xl mb-3">Membership Organisations</h4>
+          <p className="font-thin text-sm sm:text-base text-gray-600 leading-relaxed">Our membership management software provides full automation of membership renewals and payments</p>
         </div>
-        <div className="text-center shadow-md rounded flex flex-col items-center p-2 justify-center w-60 h-60">
-          <div className="relative w-12 h-12 rounded-br-2xl rounded-tl-2xl rounded bg-[#E8F5E9]">
-            <MdOutlineLocationCity className="w-10 h-10 absolute -left-4 -top-1" />
+
+        {/* National Associations Card */}
+        <div className="flex flex-col items-center text-center p-4 lg:p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+          <div className="w-16 h-16 sm:w-20 sm:h-20 bg-[#4CAF4F]/10 rounded-lg flex items-center justify-center mb-4">
+            <MdOutlineLocationCity className="w-8 h-8 sm:w-10 sm:h-10 text-[#4CAF4F]" />
           </div>
-          <p className="font-semibold m-2">National Associations</p>
-          <p>Our membership management software provides full automation of membership renewals and payments</p>
+          <h4 className="font-semibold text-lg sm:text-xl mb-3">National Associations</h4>
+          <p className="font-thin text-sm sm:text-base text-gray-600 leading-relaxed">Our membership management software provides full automation of membership renewals and payments</p>
         </div>
-        <div className="text-center shadow-md rounded flex flex-col items-center p-2 justify-center w-60 h-60">
-          <div className=" w-12 relative h-12 rounded-br-2xl rounded-tl-2xl  rounded bg-[#E8F5E9]">
-            <Hand className="text-black" />
+
+        {/* Clubs And Groups Card */}
+        <div className="flex flex-col items-center text-center p-4 lg:p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow md:col-span-2 lg:col-span-1">
+          <div className="w-16 h-16 sm:w-20 sm:h-20 bg-[#4CAF4F]/10 rounded-lg flex items-center justify-center mb-4">
+            <Hand className="w-8 h-8 sm:w-10 sm:h-10 text-[#4CAF4F]" />
           </div>
-          <p className="font-semibold m-2">Clubs And Groups</p>
-          <p>Our membership management software provides full automation of membership renewals and payments</p>
+          <h4 className="font-semibold text-lg sm:text-xl mb-3">Clubs And Groups</h4>
+          <p className="font-thin text-sm sm:text-base text-gray-600 leading-relaxed">Our membership management software provides full automation of membership renewals and payments</p>
         </div>
       </div>
-    </>
+    </div>
   );
 };
+
 export default CardSection;
