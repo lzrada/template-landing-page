@@ -17,7 +17,7 @@ export const MarqueeSection = (): JSX.Element => {
   ];
 
   return (
-    <section className="w-full py-12 lg:py-16 bg-gray-50">
+    <section className="w-full py-12 lg:py-16 bg-gray-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-8 lg:mb-12">
@@ -26,17 +26,18 @@ export const MarqueeSection = (): JSX.Element => {
         </div>
 
         {/* Mobile Version - Slower Marquee */}
-        <div className="block lg:hidden">
+        <div className="block lg:hidden overflow-hidden">
           <Marquee
             gradient={true}
             gradientColor="rgb(248, 250, 252)" // gray-50 color
             gradientWidth={40}
             speed={25} // Slower for mobile
             pauseOnHover={true}
-            className="py-4"
+            className="py-4 overflow-hidden"
+            style={{ overflow: "hidden" }}
           >
             {partners.map((partner, index) => (
-              <div key={`mobile-${partner.name}-${index}`} className="flex items-center justify-center mx-4 sm:mx-6">
+              <div key={`mobile-${partner.name}-${index}`} className="flex items-center justify-center mx-4 sm:mx-6 flex-shrink-0">
                 <img src={partner.logo} alt={`${partner.name} logo`} className="w-24 h-20 sm:w-32 sm:h-24 object-contain opacity-70 hover:opacity-100 transition-opacity duration-300" />
               </div>
             ))}
@@ -44,42 +45,24 @@ export const MarqueeSection = (): JSX.Element => {
         </div>
 
         {/* Desktop Version - Standard Grid with Subtle Animation */}
-        <div className="hidden lg:block">
+        <div className="hidden lg:block overflow-hidden">
           <Marquee
             gradient={true}
             gradientColor="rgb(248, 250, 252)" // gray-50 color
             gradientWidth={60}
             speed={40} // Medium speed for desktop
             pauseOnHover={true}
-            className="py-6"
+            className="py-6 overflow-hidden"
+            style={{ overflow: "hidden" }}
           >
             {/* Duplicate partners for seamless loop */}
             {[...partners, ...partners].map((partner, index) => (
-              <div key={`desktop-${partner.name}-${index}`} className="flex items-center justify-center mx-8 xl:mx-12">
+              <div key={`desktop-${partner.name}-${index}`} className="flex items-center justify-center mx-8 xl:mx-12 flex-shrink-0">
                 <img src={partner.logo} alt={`${partner.name} logo`} className="w-40 h-32 xl:w-48 xl:h-36 object-contain opacity-60 hover:opacity-100 transition-all duration-300 hover:scale-110" />
               </div>
             ))}
           </Marquee>
         </div>
-
-        {/* Alternative Static Grid for Desktop (Optional) */}
-        {/* Uncomment this and comment the marquee above if you prefer static layout on desktop */}
-        {/*
-        <div className="hidden lg:grid lg:grid-cols-6 gap-8 xl:gap-12 items-center justify-items-center">
-          {partners.map((partner, index) => (
-            <div
-              key={`static-${partner.name}-${index}`}
-              className="flex items-center justify-center group"
-            >
-              <img
-                src={partner.logo}
-                alt={`${partner.name} logo`}
-                className="h-12 xl:h-16 w-auto object-contain opacity-60 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110"
-              />
-            </div>
-          ))}
-        </div>
-        */}
       </div>
     </section>
   );
