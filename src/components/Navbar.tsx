@@ -1,22 +1,24 @@
 "use client";
 
-import type { JSX } from "react";
+import { useState, type JSX } from "react";
 import { useTheme } from "../context/ThemeContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 const Navbar = (): JSX.Element => {
   const { theme, toogleTheme } = useTheme();
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
-      <div className={`flex items-center justify-between p-2 w-full h-14 ${theme === "light" ? "bg-white/30 backdrop-blur-md text-[#4D4D4D]" : "bg-black shadow-sm shadow-white backdrop-blur-md text-white"} fixed top-0 shadow-md z-50`}>
+      <div className={`flex items-center justify-between p-2 w-full h-14 ${theme === "light" ? "bg-white text-[#4D4D4D]" : "bg-black shadow-sm shadow-white backdrop-blur-md text-white"} fixed top-0 shadow-md z-50`}>
         <div className="cursor-pointer  lg:ml-16 flex items-center justify-center">
           <img src="/images/personal.png" className={`w-10 ${theme === "light" ? "block" : "hidden"} `} alt="Logo" />
           <img src="/images/personal_white.png" className={`w-10  ${theme === "light" ? "hidden" : "block"}`} alt="Logo white" />
           <p className="mb-1 font-bold">LAZZGHIF</p>
         </div>
-        <div className="gap-1 mb-2 md:hidden lg:hidden cursor-pointer mr-3 flex flex-col">
+        <div className="gap-1 mb-2 md:hidden lg:hidden cursor-pointer mr-3 flex flex-col" onClick={() => setIsOpen(!isOpen)}>
           <div className="w-6 h-1 bg-black"></div>
           <div className="w-6 h-1 bg-black"></div>
           <div className="w-6 h-1 bg-black"></div>
@@ -38,6 +40,25 @@ const Navbar = (): JSX.Element => {
           </button>
         </div>
       </div>
+      {isOpen && (
+        <div className="w-full h-56 bg-white shadow-md z-50 fixed flex flex-col gap-1 items-center justify-center top-14">
+          <Link to={"/"} className=" cursor-pointer w-full h-full flex items-center justify-center hover:bg-gray-100">
+            Home
+          </Link>
+          <Link to={"/"} className=" cursor-pointer w-full h-full flex items-center justify-center hover:bg-gray-100">
+            Features
+          </Link>
+          <div onClick={() => document.getElementById("our-partners")?.scrollIntoView({ behavior: "smooth" })} className=" cursor-pointer w-full h-full flex items-center justify-center hover:bg-gray-100">
+            Partner
+          </div>
+          <Link to={"/"} className=" cursor-pointer w-full h-full flex items-center justify-center hover:bg-gray-100">
+            Blog
+          </Link>
+          <Link to={"/"} className=" cursor-pointer w-full h-full flex items-center justify-center hover:bg-gray-100">
+            Pricing
+          </Link>
+        </div>
+      )}
     </>
   );
 };
